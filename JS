@@ -1,0 +1,14 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const photoWrapper = document.querySelector('.hero-photo-wrapper');
+  const ring = document.querySelector('.photo-ring');
+  
+  // Ensure ring pulses only once on load if enabled
+  if (ring && ring.dataset.pulse === 'true') {
+    ring.style.animationPlayState = 'running';
+  }
+  
+  // Touch device degradation: Remove hover effects
+  if ('ontouchstart' in window) {
+    photoWrapper.style.cursor = 'default';
+  }
+});
